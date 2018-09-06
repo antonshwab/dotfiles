@@ -16,6 +16,7 @@
   file:
     path: ~/.config
     state: directory
+  tags: ['dotfiles']
 
 - name: Symlink karabiner config
   file:
@@ -23,6 +24,7 @@
     dest: ~/.config
     state: link
     force: yes
+  tags: ['dotfiles']
 
 - name: Symlink rest dotfiles
   file:
@@ -32,3 +34,4 @@
     force: yes
   become: no
   with_items: "{{ dotfiles_files }}"
+  tags: ['dotfiles']

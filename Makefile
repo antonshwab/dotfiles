@@ -6,6 +6,12 @@ ansible-deps-install:
 setup:
 	ansible-playbook main.yml -i local -vv -K
 
-all: ansible-deps-install setup
+setup-all:
+	ansible-playbook main.yml -i local -vv -K
+
+setup-dotfiles:
+	ansible-playbook main.yml -i local -vv -K --tags "dotfiles, emacs"
+
+
 
 # ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"

@@ -21,7 +21,7 @@
 - name: Symlink karabiner config
   file:
     src: ~/dotfiles/files/karabiner
-    dest: ~/.config
+    dest: ~/.config/karabiner
     state: link
     force: yes
   tags: ['dotfiles']

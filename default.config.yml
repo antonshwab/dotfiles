@@ -1,0 +1,55 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: yes
+configure_osx: yes
+
+emacs_dotfiles_repo: https://github.com/antonshwab/emacs-dotfiles.git
+emacs_dotfiles_repo_accept_hostkey: yes
+
+dotfiles_files:
+  - .gitignore
+  - .bashrc
+  - .bash_profile
+  - .osx
+
+homebrew_installed_packages:
+  - git
+  - wget
+  - openssl
+  - readline
+  - rlwrap
+  - node
+  - aspell
+  - the_silver_searcher
+  - autoconf
+  - sqlite
+  - terraform
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - mozart2
+  - docker
+  - dropbox
+  - google-chrome
+  - fork
+  - telegram
+
+mas_installed_apps:
+  - { id: 443987910, name: "1Password" }
+
+
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+npm_packages:
+  - name: typescript@next
+    state: latest
+
+post_provision_tasks: []

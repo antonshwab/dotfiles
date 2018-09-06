@@ -1,0 +1,34 @@
+---
+
+- name: Download emacs dotfiles
+  git:
+    repo: "{{ emacs_dotfiles_repo }}"
+    dest: ~
+    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+    force: yes
+  tags: ['emacs']
+
+- name: Move emacs dotfiles to .emacs.d
+  command: mv ~/emacs-dotfiles ~/.emacs.d
+  tags: ['emacs']
+
+- name: Create .config
+  file:
+    path: ~/.config
+    state: directory
+
+- name: Symlink karabiner config
+  file:
+    src: ~/dotfiles/files/karabiner
+    dest: ~/.config
+    state: link
+    force: yes
+
+- name: Symlink rest dotfiles
+  file:
+    src: "./files/{{ item }}"
+    dest: "~/{{ item }}"
+    state: link
+    force: yes
+  become: no
+  with_items: "{{ dotfiles_files }}"

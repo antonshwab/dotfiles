@@ -1,0 +1,34 @@
+---
+
+- hosts: all
+
+  vars:
+    homebrew_installed_packages:
+      - git
+      - wget
+      - openssl
+      - readline
+      - rlwrap
+      - node
+      - aspell
+      - the_silver_searcher
+      - autoconf
+      - sqlite
+      - terraform
+    homebrew_taps:
+      - homebrew/core
+      - homebrew/cask
+
+    homebrew_cask_appdir: /Applications
+    homebrew_cask_apps:
+      - emacs
+      - karabiner-elements
+      - mozart2
+      - docker
+      - dropbox
+      - google-chrome
+      - fork
+      - telegram
+
+  roles:
+    - role: geerlingguy.homebrew

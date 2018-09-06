@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  connection: local
+
+  tasks:
+    - name: Download emacs dotfiles
+      git:
+        repo:  git@github.com:antonshwab/emacs-dotfiles.git
+        dest: ~/emacs-dotfiles
+        # update: yes
+        accept_hostkey: yes
+
+    - name: Move emacs dotfiles to .emacs.d
+      command: mv ~/emacs-dotfiles ~/.emacs.d

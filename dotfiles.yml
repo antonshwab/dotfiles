@@ -1,0 +1,29 @@
+---
+
+- hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Copy dotfiles
+      copy:
+        src: "./files/{{ item }}"
+        dest: "~/{{ item }}"
+      with_items:
+        - .gitignore
+        - .gitconfig
+        - .bashrc
+        - .bash_profile
+        - .osx
+
+    - name: Create .config dir
+      file:
+        path: ~/.config
+        state: directory
+
+    - name: Symlink karabiner config
+      file:
+        src: ./files/karabiner
+        dest: ~/.config/karabiner
+        state: link
+        force: yes

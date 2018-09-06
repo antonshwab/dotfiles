@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+
+  vars:
+    - osx_script: "~/.osx --no-restart"
+
+  tasks:
+    - name: Run .osx dotfiles
+      shell: "{{ osx_script }}"
+      changed_when: false

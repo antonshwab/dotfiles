@@ -3,27 +3,26 @@ VPF := tmp/ansible-vault-password
 ansible-deps-install:
 	ansible-galaxy install -r requirements.yml
 
-setup-all:
-	ansible-playbook main.yml -i local -vv -K --vault-password-file=$(VPF)
-
-setup-emacs:
-	ansible-playbook main.yml -i local -vv --tags "emacs"  --vault-password-file=$(VPF)
+setup-ansible:
+	ansible-playbook setup-ansible.yml -i local -vv -K --vault-password-file=$(VPF)
 
 setup-dotfiles:
-	ansible-playbook main.yml -i local -vv --tags "dotfiles"  --vault-password-file=$(VPF)
+	ansible-playbook dotfiles.yml -i local -vv --vault-password-file=$(VPF)
 
-setup-mas:
-	ansible-playbook main.yml -i local -vv -K --tags "mas" --vault-password-file=$(VPF)
+run-setup-osx:
+	ansible-playbook osx.yml -i local -vv -K --vault-password-file=$(VPF)
 
-setup-brew:
-	ansible-playbook main.yml -i local -vv -K --tags "homebrew"  --vault-password-file=$(VPF)
-
-setup-osx:
-	ansible-playbook main.yml -i local -vv -K --tags "osx" --vault-password-file=$(VPF)
+setup-emacs:
+	ansible-playbook emacs.yml -i local -vv --vault-password-file=$(VPF)
 
 install-packages:
-	ansible-playbook main.yml -i local -vv --tags "extra-packages" --vault-password-file=$(VPF)
+	ansible-playbook extra-packages.yml -i local -vv --vault-password-file=$(VPF)
 
+setup-mas:
+	ansible-playbook mas.yml -i local -vv -K --vault-password-file=$(VPF)
+
+setup-brew:
+	ansible-playbook homebrew.yml -i local -vv -K --vault-password-file=$(VPF)
 
 
 

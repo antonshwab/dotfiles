@@ -1,0 +1,25 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: yes
+
+homebrew_installed_packages:
+  - git
+  - wget
+  - openssl
+  - readline
+  - node
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - docker
+  - dropbox
+  - firefox
+  - google-chrome
+
+mas_installed_apps: []
+mas_email: ""

@@ -1,6 +1,7 @@
 ---
 
 - hosts: all
+  connection: local
 
   vars:
     - osx_script: "~/.osx --no-restart"

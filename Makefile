@@ -18,10 +18,10 @@ setup-emacs:
 install-packages:
 	ansible-playbook extra-packages.yml -i local -vv --vault-password-file=$(VPF)
 
-setup-mas:
+mas:
 	ansible-playbook mas.yml -i local -vv -K --vault-password-file=$(VPF)
 
-setup-brew:
+brew:
 	ansible-playbook homebrew.yml -i local -vv -K --vault-password-file=$(VPF)
 
 

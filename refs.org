@@ -1,8 +1,7 @@
-https://github.com/antonshwab/devops-workshop
-https://github.com/mathiasbynens/dotfiles
-https://github.com/mokevnin/dotfiles/blob/master/dotfiles.yml
-https://mattstauffer.com/blog/setting-up-a-new-os-x-development-machine-part-3-dotfiles-rc-files-and-ssh-config/
-https://github.com/palcu/dotfiles/tree/master/home
-https://github.com/geerlingguy/ansible-role-dotfiles
-https://github.com/geerlingguy/dotfiles/blob/master/.osx
-https://github.com/geerlingguy/mac-dev-playbook
+- https://github.com/mathiasbynens/dotfiles
+- https://github.com/mokevnin/dotfiles/blob/master/dotfiles.yml
+- https://mattstauffer.com/blog/setting-up-a-new-os-x-development-machine-part-3-dotfiles-rc-files-and-ssh-config/
+- https://github.com/palcu/dotfiles/tree/master/home
+- https://github.com/geerlingguy/ansible-role-dotfiles
+- https://github.com/geerlingguy/dotfiles/blob/master/.osx
+- https://github.com/geerlingguy/mac-dev-playbook

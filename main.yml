@@ -8,9 +8,11 @@
   vars_prompt:
     - name: "mas_email"
       prompt: "Enter apple ID:"
+      when: ""
 
     - name: "mas_password"
       prompt: "Enter apple password:"
+      when: mas_installed_apps
 
   pre_tasks:
     - include_vars: "{{ item }}"

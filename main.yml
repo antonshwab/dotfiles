@@ -20,6 +20,9 @@
       when: configure_dotfiles
       tags: ['dotfiles']
 
+    - include_tasks: tasks/emacs.yml
+      tags: ['emacs']
+
     - include_tasks: tasks/osx.yml
       when: configure_osx
       tags: ['osx']

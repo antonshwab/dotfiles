@@ -19,7 +19,12 @@ setup-brew:
 	ansible-playbook main.yml -i local -vv -K --tags "homebrew"  --vault-password-file=$(VPF)
 
 setup-osx:
-	ansible-playbook main.yml -i local -vv -K --tags "osx"  --vault-password-file=$(VPF)
+	ansible-playbook main.yml -i local -vv -K --tags "osx" --vault-password-file=$(VPF)
+
+install-packages:
+	ansible-playbook main.yml -i local -vv --tags "extra-packages" --vault-password-file=$(VPF)
+
+
 
 
 ansible-vaults-encrypt:

@@ -1,17 +1,5 @@
 ---
 
-- name: Download emacs dotfiles
-  git:
-    repo: "{{ emacs_dotfiles_repo }}"
-    dest: ~
-    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
-    force: yes
-  tags: ['emacs']
-
-- name: Move emacs dotfiles to .emacs.d
-  command: mv ~/emacs-dotfiles ~/.emacs.d
-  tags: ['emacs']
-
 - name: Create .config
   file:
     path: ~/.config
@@ -26,7 +14,7 @@
     force: yes
   tags: ['dotfiles']
 
-- name: Symlink rest dotfiles
+- name: Symlink dotfiles
   file:
     src: "./files/{{ item }}"
     dest: "~/{{ item }}"
